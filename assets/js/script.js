@@ -22,7 +22,8 @@ var charSpecial = window.prompt ("Would you like your password to contain specia
 
 function generatePassword (){
 
-  
+
+  //Math.floor(Math.random() * (128 - 8 + 1) ) + 8;  
  
   //validate input
 
