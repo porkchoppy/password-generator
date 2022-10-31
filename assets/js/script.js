@@ -1,15 +1,23 @@
 // Assignment code here
-const numbers = "0123456789";
-const lowercase = "abcdefghijklmnopqrstuvwxyz";
-const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const special = "!@#$%^&*+_?"
+var numbers = "0123456789";
+var lowercase = "abcdefghijklmnopqrstuvwxyz";
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var special = "!@#$%^&*+_?"
+
+var selection = [numbers, lowercase, uppercase, special];
 
 // Get references to the #generate element
+
 var generateBtn = document.querySelector("#generate");
 
 //prompt user for pw criteria - pw length 8-128 chars - default minimum; lowercase, uppercase, numbers, spec chars
 
 var charLength = window.prompt("Select a length for your password between 8 and 128 characters.");
+
+//while(charLength. !== > 8 && charLength !== < 128){
+//  window.alert("Your selection is outside of the range of 8 and 128.");
+//  charLength = window.prompt("Select a length for your password between 8 and 128 characters.");
+//}
 
 var charNumbers = window.prompt("Would you like your password to contain numbers? Y/N");
 
@@ -44,18 +52,11 @@ while(charSpecial.toUpperCase() !== "Y" && charSpecial.toUpperCase() !== "N"){
 
 
 function generatePassword (){
-
-
-
-
-//validate input
-
-  //generate pw based on criteria
-
-  //display pw to the page 
-
-  return "password placeholder"
-}
+  var password = "";
+  
+  
+  return password;
+};
 
 // Write password to the #password input
 function writePassword() {
