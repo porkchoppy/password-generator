@@ -19,11 +19,11 @@ Here is the series of prompts for the user to select their criteria.
 
 Along with a screenshot of a randomly generated password displayed on the page. 
 
-![generate screenshot](assets/images/.png)
+![generate screenshot](assets/images/password-1.png)
 
 ## Credits
 
-I received collaborative brainstorming and help from classmate Joshua Taylor and tutor Andrew Tirpok. 
+I received collaborative brainstorming and help from classmate Joshua Taylor and tutor Andrew Tirpok, as well as TA Luis Pineda. 
 
 ## Link to live site
 
