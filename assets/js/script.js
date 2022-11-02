@@ -4,59 +4,53 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var special = "!@#$%^&*+_?"
 
-var selection = [numbers, lowercase, uppercase, special];
+var selection = "" // [numbers, lowercase, uppercase, special];
 
 // Get references to the #generate element
 
 var generateBtn = document.querySelector("#generate");
 
-//prompt user for pw criteria - pw length 8-128 chars - default minimum; lowercase, uppercase, numbers, spec chars
-
-var charLength = window.prompt("Select a length for your password between 8 and 128 characters.");
-
-//while(charLength. !== > 8 && charLength !== < 128){
-//  window.alert("Your selection is outside of the range of 8 and 128.");
-//  charLength = window.prompt("Select a length for your password between 8 and 128 characters.");
-//}
-
-var charNumbers = window.prompt("Would you like your password to contain numbers? Y/N");
-
-while(charNumbers.toUpperCase() !== "Y" && charNumbers.toUpperCase() !== "N"){
-  window.alert("Please enter Y for yes or N for no. ");
-  charNumbers = window.prompt("Would you like your password to contain numbers? Y/N");
-}
-
-var charLower = window.prompt("Would you like your password to contain lowercase letters? Y/N");
-
-while(charLower.toUpperCase() !== "Y" && charLower.toUpperCase() !== "N"){
-  window.alert("Please enter Y for yes or N for no. ");
-  charLower = window.prompt("Would you like your password to contain numbers? Y/N");
-}
-
-var charUpper = window.prompt("Would you like your password to contain uppercase letters? Y/N");
-
-while(charUpper.toUpperCase() !== "Y" && charUpper.toUpperCase() !== "N"){
-  window.alert("Please enter Y for yes or N for no. ");
-  charUpper = window.prompt("Would you like your password to contain numbers? Y/N");
-}
-
-var charSpecial = window.prompt ("Would you like your password to contain special characters? Y/N");
-
-while(charSpecial.toUpperCase() !== "Y" && charSpecial.toUpperCase() !== "N"){
-  window.alert("Please enter Y for yes or N for no. ");
-  charSpecial = window.prompt("Would you like your password to contain numbers? Y/N");
-}
-
-
-//var randomNumber = Math.floor(Math.random() * (128 - 8 + 1) ) + 8;  
 
 
 function generatePassword (){
+
   var password = "";
   
-  
+  //prompt user for pw criteria - pw length 8-128 chars; lowercase, uppercase, numbers, spec chars
+
+  var charLength = parseInt(window.prompt("Select a length for your password between 8 and 128 characters."));
+  if  (charLength < 8 || charLength > 128) {
+    alert('You must enter a number between 8 and 128')
+      }
+
+  var charNumbers = window.confirm("Would you like your password to contain numbers?");
+  if (charNumbers) {
+    selection += numbers;
+  }
+
+var charLower = window.confirm("Would you like your password to contain lowercase letters?");
+if (charLower) {
+  selection += lowercase; 
+}
+
+var charUpper = window.confirm("Would you like your password to contain uppercase letters?");
+if (charUpper) {
+  selection += uppercase;
+}
+
+var charSpecial = window.confirm ("Would you like your password to contain special characters?");
+if (charSpecial) {
+  selection += special;
+}
+
+// run a for loop the number of times characters are added to password (charLength)
+// in each iteration add a random character from selection to password
+  for (var i = 0; i < charLength; i++) { 
+    password += selection.charAt(Math.floor(Math.random() * selection.length ));
+  }
+
   return password;
-};
+}
 
 // Write password to the #password input
 function writePassword() {
@@ -64,7 +58,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
