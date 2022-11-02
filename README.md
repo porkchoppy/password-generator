@@ -15,7 +15,7 @@ Here is the series of prompts for the user to select their criteria.
 
 ![prompt-4 screenshot](assets/images/prompt-4.png)
 
-![prompt-5 screenshot](assets/images/prompt-5.png)
+![prompt-5 screenshot](assets/images/prompt-5a.png)
 
 Along with a screenshot of a randomly generated password displayed on the page. 
 
